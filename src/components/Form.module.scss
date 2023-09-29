@@ -78,3 +78,21 @@
 
 .label {
 }
+
+.btn_default {
+    display: block;
+
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn_primary_stroke {
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    background-color: #fff;
+}
+.btn_primary_fill {
+    color: #fff;
+    background-color: $color-primary;
+}
