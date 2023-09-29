@@ -1,1 +1,13 @@
 $color-primary: #05ca7e;
+
+@mixin place-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin wrapper {
+    width: 90%;
+    max-width: 1440px;
+    margin: 0px auto;
+}
