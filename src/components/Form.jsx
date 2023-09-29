@@ -13,3 +13,20 @@ export const Search = () => {
         </div>
     );
 };
+
+export const Button = ({ type, width, height, children, ...rest }) => {
+    if (type === "primary-stroke") {
+        return (
+            <button className={`${styles.btn_primary_stroke} ${styles.btn_default}`} style={{ width: width, height: height }} {...rest}>
+                {children}
+            </button>
+        );
+    }
+    if (type === "primary-fill") {
+        return (
+            <button className={`${styles.btn_primary_fill} ${styles.btn_default}`} style={{ width: width, height: height }} {...rest}>
+                {children}
+            </button>
+        );
+    }
+};
