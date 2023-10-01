@@ -13,3 +13,15 @@ export const Search = () => {
         </div>
     );
 };
+
+export const Form = ({ children, width, height, ...rest }) => {
+    return (
+        <form style={{ width: width, height: height }} {...rest}>
+            {children}
+        </form>
+    );
+};
+
+export const Input = ({ width, height, ...rest }) => {
+    return <input style={{ width: width, height: height }} className={styles.input} {...rest} />;
+};

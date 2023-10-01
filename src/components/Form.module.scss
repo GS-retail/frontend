@@ -1,3 +1,5 @@
+@import "@/styles/utils.scss";
+
 .search_wrapper {
     position: relative;
 
@@ -36,4 +38,29 @@
             cursor: pointer;
         }
     }
+}
+
+.input[type="text"],
+.input[type="password"] {
+    display: block;
+    height: 50px;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 0px 20px;
+
+    &:focus {
+        outline: none !important;
+        border: 2px solid $color-primary;
+    }
+}
+.input[type="submit"] {
+    display: block;
+    height: 50px;
+
+    border-radius: 10px;
+    padding: 0px 20px;
+
+    color: #fff;
+    background-color: $color-primary;
 }
