@@ -23,5 +23,13 @@ export const Form = ({ children, width, height, ...rest }) => {
 };
 
 export const Input = ({ width, height, ...rest }) => {
-    return <input style={{ width: width, height: height }} className={styles.input} {...rest} />;
+    return <input style={{ width: width, height: height }} className={styles.input} {...rest}></input>;
+};
+
+export const Label = ({ children, ...rest }) => {
+    return (
+        <label className={styles.label} {...rest}>
+            {children}
+        </label>
+    );
 };
