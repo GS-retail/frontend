@@ -5,7 +5,7 @@
 
     .sign_in_form {
         display: block;
-        width: 100%;
+        width: 90%;
         max-width: 660px;
 
         .title {
@@ -85,7 +85,7 @@
     .sep {
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: 90%;
         max-width: 660px;
 
         margin: 20px auto;
@@ -103,6 +103,15 @@
                 border-bottom: 1px solid #bdbdbd;
             }
         }
+    }
+
+    .social_login_container{
+        display: flex;
+        gap: 20px;
+
+        width: 90%;
+        max-width: 660px;
+        height: 55px;
     }
 }
 

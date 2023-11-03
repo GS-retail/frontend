@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Form, Input, Label } from "@/components/Form";
+import { Input, Label, SocialLoginButton } from "@/components/Form";
+
 import styles from "./AuthPage.module.scss";
 
 const AuthPage = {
@@ -41,6 +42,12 @@ const AuthPage = {
                     <div className={styles.separator}>
                         <span></span>
                     </div>
+                </div>
+
+                <div className={styles.social_login_container}>
+                    <SocialLoginButton type="google" />
+                    <SocialLoginButton type="naver" />
+                    <SocialLoginButton type="kakao" />
                 </div>
             </main>
         );
