@@ -1,6 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+import IconGoogle from "@/assets/icon-google.png";
+import IconNaver from "@/assets/icon-naver.png";
+import IconKakao from "@/assets/icon-kakao.png";
+
 import styles from "./Form.module.scss";
 
 export const Search = () => {
@@ -49,4 +53,28 @@ export const Button = ({ type, width, height, children, ...rest }) => {
             </button>
         );
     }
+};
+
+export const SocialLoginButton = ({ type, ...rest }) => {
+    const types = {
+        "google" : {
+            icon : IconGoogle,
+            text : "구글"
+        },
+        "naver" : {
+            icon : IconNaver,
+            text : "네이버"
+        },
+        "kakao" : {
+            icon : IconKakao,
+            text : "카카오"
+        }
+    };
+
+    return (
+        <button className={styles.social_login_btn}>
+            <img src={types[type].icon} alt="" />
+            <p>{types[type].text} 계정으로 시작</p>
+        </button>
+    );
 };

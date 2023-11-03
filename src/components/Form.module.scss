@@ -96,3 +96,33 @@
     color: #fff;
     background-color: $color-primary;
 }
+
+.social_login_btn {
+    box-sizing: border-box;
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 100%;
+
+    padding: 10px 20px;
+    border: 1px solid #DBDBDB;
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    img{
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+    p{
+        width: 100%;
+        color: #767676;
+        font-weight: bold;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
