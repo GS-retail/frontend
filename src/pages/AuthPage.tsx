@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Input, Label, SocialLoginButton } from "@/components/Form";
+import { Input, Label } from "@/components/interface/Form";
+import { Button, SocialLoginButton } from "@/components/interface/Button";
 
 import styles from "./AuthPage.module.scss";
 
@@ -7,8 +8,9 @@ const AuthPage = {
     SignIn: () => {
         return (
             <main className={styles.sign_in}>
-                <div className={styles.sign_in_form}>
+                <div className={styles.form}>
                     <Label className={styles.title}>로그인</Label>
+
                     <Input name="id" type="text" placeholder="아이디를 입력해주세요"></Input>
                     <Input name="pw" type="password" placeholder="비밀번호를 입력해주세요"></Input>
 
@@ -53,7 +55,29 @@ const AuthPage = {
         );
     },
     SignUp: () => {
-        return <main className={styles.sign_up}>Sign up</main>;
+        return (
+            <main className={styles.sign_up}>
+                <div className={styles.form}>
+                    <Label className={styles.title}>회원가입</Label>
+                    <Input name="id" type="text" placeholder="아이디를 입력해주세요"></Input>
+                    <Input name="pw" type="password" placeholder="비밀번호를 입력해주세요"></Input>
+
+                    <div className={styles.links}>
+                        <span>
+                            <Input name="save" type="checkbox"></Input>
+                            <Label htmlFor="save">로그인 유지하기</Label>
+                        </span>
+
+                        <span>
+                            <Link>아이디 찾기</Link>
+                            <Link>비밀번호 찾기</Link>
+                        </span>
+                    </div>
+
+                    <Input type="submit" value="로그인" />
+                </div>
+            </main>
+        );
     },
 };
 

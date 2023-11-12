@@ -1,1 +1,6 @@
 $color-primary: #05ca7e;
+
+@mixin wrapper {
+    width: 90%;
+    max-width: 660px;
+}

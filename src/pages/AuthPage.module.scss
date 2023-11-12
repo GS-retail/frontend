@@ -1,68 +1,71 @@
+@import "@/styles/utils.scss";
+
+.title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+
+    span:first-child {
+        display: flex;
+        align-items: center;
+        label {
+            display: flex;
+            align-items: center;
+            margin: 0px 10px;
+        }
+    }
+    span:last-child {
+        display: flex;
+        a {
+            display: flex;
+            align-items: center;
+            margin: 0px 5px;
+            text-decoration: none;
+            color: #767676;
+        }
+        a:visited {
+            text-decoration: none;
+            color: #767676;
+        }
+    }
+    input[type="checkbox"] {
+        width: 30px;
+    }
+}
+
+.form {
+    display: block;
+    @include wrapper;
+
+    input:not(input[type="checkbox"]) {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        margin: 15px 0px;
+    }
+    input[type="submit"] {
+        height: 50px;
+
+        margin: 20px 0px;
+        font-size: 1rem;
+    }
+}
+
 .sign_in {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .sign_in_form {
-        display: block;
-        width: 90%;
-        max-width: 660px;
-
-        .title {
-            display: block;
-            width: 100%;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        .links {
-            display: flex;
-            justify-content: space-between;
-            height: 30px;
-
-            span:first-child {
-                display: flex;
-                align-items: center;
-                label {
-                    display: flex;
-                    align-items: center;
-                    margin: 0px 10px;
-                }
-            }
-            span:last-child {
-                display: flex;
-                a {
-                    display: flex;
-                    align-items: center;
-                    margin: 0px 5px;
-                    text-decoration: none;
-                    color: #767676;
-                }
-                a:visited {
-                    text-decoration: none;
-                    color: #767676;
-                }
-            }
-            input[type="checkbox"] {
-                width: 30px;
-            }
-        }
-
-        input:not(input[type="checkbox"]) {
-            box-sizing: border-box;
-            display: block;
-            width: 100%;
-            margin: 15px 0px;
-        }
-        input[type="submit"] {
-            height: 50px;
-
-            margin: 20px 0px;
-            font-size: 1rem;
-        }
-    }
-
     .sign_up_link {
+        margin: 5px 0px;
         text-align: center;
         span:first-child {
             color: #767676;
@@ -105,7 +108,7 @@
         }
     }
 
-    .social_login_container{
+    .social_login_container {
         display: flex;
         gap: 20px;
 
@@ -116,6 +119,13 @@
 }
 
 .sign_up {
-    .sign_up_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media all and (max-width: 479px) {
+    .social_login_container {
+        flex-direction: column;
     }
 }
