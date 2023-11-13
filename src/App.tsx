@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./store/store";
-import { Nav } from "./components/Nav";
+import { Header } from "@/components/Header";
 
 import HomePage from "@/pages/HomePage";
 import AuthPage from "@/pages/AuthPage";
@@ -10,7 +10,7 @@ import AuthPage from "@/pages/AuthPage";
 export default function App() {
     return (
         <Provider store={store}>
-            <Nav />
+            <Header />
 
             <Routes>
                 <Route path="/" element={<HomePage />} />

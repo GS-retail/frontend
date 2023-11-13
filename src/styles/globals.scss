@@ -6,6 +6,16 @@
     box-sizing: content-box;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
 button {
     &:hover {
         cursor: pointer;
