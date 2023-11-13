@@ -1,10 +1,12 @@
+import { IButton, ISocialLoginButton } from "./types";
+
 import styles from "./Button.module.scss";
 
 import IconGoogle from "@/assets/icon-google.png";
 import IconNaver from "@/assets/icon-naver.png";
 import IconKakao from "@/assets/icon-kakao.png";
 
-export const Button = ({ type, width, height, children, ...rest }) => {
+export const Button = ({ type, width, height, children, ...rest }: IButton): JSX.Element | undefined => {
     if (type === "primary-stroke") {
         return (
             <button className={`${styles.btn_primary_stroke} ${styles.btn_default}`} style={{ width: width, height: height }} {...rest}>
@@ -21,7 +23,7 @@ export const Button = ({ type, width, height, children, ...rest }) => {
     }
 };
 
-export const SocialLoginButton = ({ type, ...rest }) => {
+export const SocialLoginButton = ({ type, ...rest }: ISocialLoginButton): JSX.Element => {
     const types = {
         google: {
             icon: IconGoogle,
@@ -38,7 +40,7 @@ export const SocialLoginButton = ({ type, ...rest }) => {
     };
 
     return (
-        <button className={styles.social_login_btn}>
+        <button className={styles.social_login_btn} {...rest}>
             <img src={types[type].icon} alt="" />
             <p>{types[type].text} 계정으로 시작</p>
         </button>
