@@ -4,3 +4,9 @@ $color-primary: #05ca7e;
     width: 90%;
     max-width: 660px;
 }
+
+@mixin place-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
