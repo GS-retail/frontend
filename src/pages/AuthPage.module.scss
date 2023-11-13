@@ -1,5 +1,37 @@
 @import "@/styles/utils.scss";
 
+.horizontal_separator {
+    width: 100%;
+    height: 3px;
+
+    margin: 10px 0px;
+
+    background-color: black;
+}
+
+.sep {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 660px;
+
+    margin: 20px auto;
+    color: #767676;
+    .separator {
+        display: flex;
+        align-items: center;
+        width: 45%;
+        height: inherit;
+        margin: 0px auto;
+        span {
+            display: block;
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #bdbdbd;
+        }
+    }
+}
+
 .title {
     display: block;
     width: 100%;
@@ -84,44 +116,73 @@
             }
         }
     }
+}
 
-    .sep {
-        display: flex;
-        justify-content: space-between;
-        width: 90%;
-        max-width: 660px;
+.social_login_container {
+    display: flex;
+    gap: 20px;
 
-        margin: 20px auto;
-        color: #767676;
-        .separator {
-            display: flex;
-            align-items: center;
-            width: 45%;
-            height: inherit;
-            margin: 0px auto;
-            span {
-                display: block;
-                width: 100%;
-                height: 1px;
-                border-bottom: 1px solid #bdbdbd;
-            }
-        }
-    }
-
-    .social_login_container {
-        display: flex;
-        gap: 20px;
-
-        width: 90%;
-        max-width: 660px;
-        height: 55px;
-    }
+    width: 100%;
+    max-width: 660px;
+    height: 55px;
 }
 
 .sign_up {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.input_gender_wrapper {
+    display: flex;
+
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex-shrink: 0;
+        flex-basis: 100px;
+
+        font-weight: bold;
+    }
+    span {
+        display: flex;
+        margin: 0px auto;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            margin: 0px 20px;
+        }
+        input[type="radio"] {
+            width: 20px;
+            height: 20px;
+
+            accent-color: $color-primary;
+        }
+    }
+}
+
+.input_birth_wrapper {
+    display: flex;
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex-shrink: 0;
+        flex-basis: 100px;
+
+        font-weight: bold;
+    }
+    span {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
 }
 
 @media all and (max-width: 479px) {
