@@ -5,6 +5,7 @@ import { store } from "./store/store";
 import { Nav } from "./components/Nav";
 
 import HomePage from "@/pages/HomePage";
+import AuthPage from "@/pages/AuthPage";
 
 export default function App() {
     return (
@@ -13,6 +14,8 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/auth/signin" element={<AuthPage.SignIn />} />
+                <Route path="/auth/signup" element={<AuthPage.SignUp />} />
             </Routes>
         </Provider>
     );

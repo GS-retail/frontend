@@ -1,0 +1,49 @@
+@import "@/styles/utils.scss";
+
+.btn_default {
+    display: block;
+
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.btn_primary_stroke {
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    background-color: #fff;
+}
+.btn_primary_fill {
+    color: #fff;
+    background-color: $color-primary;
+}
+
+.social_login_btn {
+    box-sizing: border-box;
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 100%;
+
+    padding: 10px 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    img {
+        height: 100%;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+    p {
+        width: 100%;
+        color: #767676;
+        font-weight: bold;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}

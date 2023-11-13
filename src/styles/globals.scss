@@ -5,3 +5,9 @@
 
     box-sizing: content-box;
 }
+
+button {
+    &:hover {
+        cursor: pointer;
+    }
+}
