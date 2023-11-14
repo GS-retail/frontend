@@ -3,7 +3,6 @@ import { Input, InputContainer, Label } from "../components/interface/Form";
 import { SocialLoginButton } from "../components/interface/Button";
 
 import styles from "./AuthPage.module.scss";
-import { useCallback } from "react";
 
 const AuthPage = {
     SignIn: () => {

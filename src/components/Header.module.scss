@@ -9,6 +9,10 @@
     .logo {
         flex-grow: 1;
         @include place-center;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
     .search {
         flex-grow: 3;
@@ -64,4 +68,5 @@
 }
 
 .header {
+    margin-bottom: 50px;
 }

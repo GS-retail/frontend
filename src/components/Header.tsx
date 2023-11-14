@@ -1,17 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Search } from "./Form";
+import { Search } from "./interface/Form";
+import { Button } from "./interface/Button";
 
 import styles from "./Header.module.scss";
 
 import logo from "@/assets/logo.svg";
-import { faBars, faHamburger } from "@fortawesome/free-solid-svg-icons";
-import { NavLink } from "react-router-dom";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 
-export const Nav = () => {
+export const Nav = (): JSX.Element => {
+    const navigate = useNavigate();
+
     return (
         <nav className={styles.nav_wrapper}>
-            <div className={styles.logo}>
+            <div className={styles.logo} onClick={() => navigate("/")}>
                 <img src={logo} alt="logo" />
             </div>
 
@@ -20,10 +23,10 @@ export const Nav = () => {
             </div>
 
             <div className={styles.auth}>
-                <Button type="primary-fill" width="90px" height="45px">
+                <Button type="primary-fill" width="90px" height="45px" onClick={() => navigate("/auth/signin")}>
                     로그인
                 </Button>
-                <Button type="primary-stroke" width="90px" height="45px">
+                <Button type="primary-stroke" width="90px" height="45px" onClick={() => navigate("/auth/signup")}>
                     회원가입
                 </Button>
             </div>
@@ -31,7 +34,7 @@ export const Nav = () => {
     );
 };
 
-export const NavMenu = () => {
+export const NavMenu = (): JSX.Element => {
     const getActiveStyle = useCallback(({ isActive }) => {
         if (isActive) return { color: "#05ca7e", fontWeight: "bold" };
     }, []);
@@ -69,7 +72,7 @@ export const NavMenu = () => {
     );
 };
 
-export const Header = () => {
+export const Header = (): JSX.Element => {
     return (
         <header className={styles.header}>
             <Nav />

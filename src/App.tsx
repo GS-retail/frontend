@@ -2,10 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 
 import { store } from "./store/store";
-import { Header } from "@/components/Header";
+import { Header } from "./components/Header";
 
-import HomePage from "@/pages/HomePage";
-import AuthPage from "@/pages/AuthPage";
+import HomePage from "./pages/HomePage";
+import AuthPage from "./pages/AuthPage";
 
 export default function App() {
     return (

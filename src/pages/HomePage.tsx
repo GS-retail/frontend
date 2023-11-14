@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card";
+import { Card } from "../components/Card";
 import styles from "./HomePage.module.scss";
 
 export default function HomePage() {
@@ -6,19 +6,7 @@ export default function HomePage() {
         <main className={styles.main}>
             <Card.Container>
                 {data.map((value, index) => {
-                    return (
-                        <Card.Item
-                            key={index}
-                            imgSrc={value.imgSrc}
-                            title={value.title}
-                            category={value.category}
-                            subcategory={value.subcategory}
-                            region={value.region}
-                            quantity={value.quantity}
-                            time={value.time}
-                            progress={value.progress}
-                        />
-                    );
+                    return <Card.Item key={index} imgSrc={value.imgSrc} title={value.title} category={value.category} subcategory={value.subcategory} region={value.region} quantity={value.quantity} time={value.time} progress={value.progress} />;
                 })}
             </Card.Container>
         </main>

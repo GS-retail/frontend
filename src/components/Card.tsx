@@ -2,9 +2,10 @@ import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons/faClock";
 import styles from "./Card.module.scss";
+import { ICardContainer, ICardItem } from "./types";
 
 export const Card = {
-    Container: ({ children, ...rest }) => {
+    Container: ({ children, ...rest }: ICardContainer) => {
         return (
             <div className={styles.wrapper}>
                 <div className={styles.container} {...rest}>
@@ -14,12 +15,14 @@ export const Card = {
         );
     },
 
-    Item: ({ imgSrc, title, category, subcategory, region, quantity, time, progress, ...rest }) => {
-        const progressBar = useRef();
+    Item: ({ imgSrc, title, category, subcategory, region, quantity, time, progress, ...rest }: ICardItem) => {
+        const progressBar = useRef<HTMLDivElement>(null);
 
         useEffect(() => {
             const timeout = setTimeout(() => {
-                progressBar.current.style.transform = `scaleX(${progress})`;
+                if (progressBar.current !== null) {
+                    progressBar.current.style.transform = `scaleX(${progress})`;
+                }
             }, 100);
             return () => clearTimeout(timeout);
         }, [progress]);
