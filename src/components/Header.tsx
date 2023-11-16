@@ -35,7 +35,7 @@ export const Nav = (): JSX.Element => {
 };
 
 export const NavMenu = (): JSX.Element => {
-    const getActiveStyle = useCallback(({ isActive }) => {
+    const getActiveStyle = useCallback(({ isActive }: { isActive: boolean }) => {
         if (isActive) return { color: "#05ca7e", fontWeight: "bold" };
     }, []);
 
