@@ -1,13 +1,16 @@
+import { useCallback } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 import { Search } from "./interface/Form";
 import { Button } from "./interface/Button";
+import { Category } from "./Category";
 
 import styles from "./Header.module.scss";
 
+import { categories } from "../constant/categories";
 import logo from "@/assets/logo.svg";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useCallback } from "react";
 
 export const Nav = (): JSX.Element => {
     const navigate = useNavigate();
@@ -73,10 +76,38 @@ export const NavMenu = (): JSX.Element => {
 };
 
 export const Header = (): JSX.Element => {
+    const baseURL = "src/assets/category-icons/";
+
     return (
         <header className={styles.header}>
             <Nav />
             <NavMenu />
+
+            <Category.Container>
+                <Category.Items>
+                    {categories.slice(0, 4).map((element) => {
+                        return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                    })}
+                </Category.Items>
+
+                <Category.Items>
+                    {categories.slice(4, 8).map((element) => {
+                        return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                    })}
+                </Category.Items>
+
+                <Category.Items>
+                    {categories.slice(8, 12).map((element) => {
+                        return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                    })}
+                </Category.Items>
+
+                <Category.Items>
+                    {categories.slice(12, 15).map((element) => {
+                        return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                    })}
+                </Category.Items>
+            </Category.Container>
         </header>
     );
 };

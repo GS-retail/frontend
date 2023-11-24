@@ -6,6 +6,8 @@
 
     height: 120px;
 
+    background-color: #fff;
+
     .logo {
         flex-grow: 1;
         @include place-center;
@@ -33,6 +35,8 @@
     width: 100%;
 
     border-bottom: 2px solid $color-primary;
+
+    background-color: #fff;
 
     .nav_menu_container {
         display: flex;
@@ -68,5 +72,7 @@
 }
 
 .header {
+    position: sticky;
+    top: 0;
     margin-bottom: 50px;
 }
