@@ -1,6 +1,6 @@
 @import "@/styles/utils.scss";
 
-.wrapper {
+.category_wrapper {
     position: fixed;
     z-index: 99;
 
@@ -10,7 +10,7 @@
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.category_container {
     display: flex;
     justify-content: space-around;
 
@@ -18,10 +18,11 @@
     width: 80%;
 }
 
-.items {
+.category_items {
+    width: 200px;
 }
 
-.item {
+.category_item {
     display: flex;
 
     width: 200px;
@@ -45,4 +46,10 @@
 
         margin-left: 10px;
     }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+}
+
+@media screen and (max-width: $breakpoint-tablet) {
 }
