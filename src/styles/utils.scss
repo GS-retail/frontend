@@ -1,5 +1,9 @@
 $color-primary: #05ca7e;
 
+$header-z-index: 999;
+$category-z-index: 998;
+$card-z-index: -1;
+
 @mixin wrapper {
     width: 90%;
     max-width: 660px;
