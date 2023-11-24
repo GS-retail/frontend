@@ -15,7 +15,9 @@
 }
 
 .item_container {
-    // width: 260px;
+    position: relative;
+    z-index: -1;
+
     width: 260px;
     height: 350px;
 
@@ -45,6 +47,7 @@
         margin: 0px 10px;
         .progress_bar {
             position: relative;
+
             width: 100%;
             height: 5px;
 

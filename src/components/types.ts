@@ -13,3 +13,16 @@ export interface ICardItem {
     time: number;
     progress: number;
 }
+
+export interface ICategoryContainer {
+    children: React.ReactNode;
+}
+
+export interface ICategoryItems {
+    children: React.ReactNode;
+}
+
+export interface ICategoryItem {
+    imgSrc: string;
+    text: string;
+}

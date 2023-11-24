@@ -1,13 +1,20 @@
+import { useCallback } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 import { Search } from "./interface/Form";
 import { Button } from "./interface/Button";
+import { Category } from "./Category";
 
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { RootState } from "../store/store";
+import { navActions } from "../store/nav-slice";
+
+import { categories } from "../constant/categories";
 import styles from "./Header.module.scss";
-
 import logo from "@/assets/logo.svg";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useCallback } from "react";
 
 export const Nav = (): JSX.Element => {
     const navigate = useNavigate();
@@ -39,10 +46,12 @@ export const NavMenu = (): JSX.Element => {
         if (isActive) return { color: "#05ca7e", fontWeight: "bold" };
     }, []);
 
+    const dispatch: Dispatch = useDispatch();
+
     return (
         <div className={styles.nav_menu_wrapper}>
             <ul className={styles.nav_menu_container}>
-                <li>
+                <li onClick={() => dispatch(navActions.toggleCategory())}>
                     <FontAwesomeIcon icon={faBars} />
                     <span>카테고리</span>
                 </li>
@@ -73,10 +82,42 @@ export const NavMenu = (): JSX.Element => {
 };
 
 export const Header = (): JSX.Element => {
+    const baseURL = "src/assets/category-icons/";
+
+    const { isCategoryOpen } = useSelector((state: RootState) => state.navSlice);
+
     return (
         <header className={styles.header}>
             <Nav />
             <NavMenu />
+
+            {isCategoryOpen && (
+                <Category.Container>
+                    <Category.Items>
+                        {categories.slice(0, 4).map((element) => {
+                            return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                        })}
+                    </Category.Items>
+
+                    <Category.Items>
+                        {categories.slice(4, 8).map((element) => {
+                            return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                        })}
+                    </Category.Items>
+
+                    <Category.Items>
+                        {categories.slice(8, 12).map((element) => {
+                            return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                        })}
+                    </Category.Items>
+
+                    <Category.Items>
+                        {categories.slice(12, 15).map((element) => {
+                            return <Category.Item imgSrc={baseURL + element.imgSrc} text={element.text} />;
+                        })}
+                    </Category.Items>
+                </Category.Container>
+            )}
         </header>
     );
 };

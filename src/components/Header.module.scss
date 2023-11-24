@@ -6,6 +6,8 @@
 
     height: 120px;
 
+    background-color: #fff;
+
     .logo {
         flex-grow: 1;
         @include place-center;
@@ -34,6 +36,8 @@
 
     border-bottom: 2px solid $color-primary;
 
+    background-color: #fff;
+
     .nav_menu_container {
         display: flex;
         justify-content: flex-start;
@@ -43,6 +47,8 @@
         margin: 0px auto;
 
         a {
+            width: 80px;
+            text-align: center;
             color: #7d8790;
         }
 
@@ -64,9 +70,19 @@
             font-weight: bold;
             background-color: $color-primary;
         }
+
+        li:hover {
+            cursor: pointer;
+        }
     }
 }
 
 .header {
+    position: fixed;
+    z-index: $header-z-index;
+    top: 0;
+
+    width: 100%;
+
     margin-bottom: 50px;
 }
