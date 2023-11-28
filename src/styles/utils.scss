@@ -1,0 +1,19 @@
+$color-primary: #05ca7e;
+
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 1023px;
+
+$header-z-index: 999;
+$category-z-index: 998;
+$card-z-index: -1;
+
+@mixin wrapper {
+    width: 90%;
+    max-width: 660px;
+}
+
+@mixin place-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

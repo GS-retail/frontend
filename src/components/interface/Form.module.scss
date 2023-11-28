@@ -1,0 +1,137 @@
+@import "@/styles/utils.scss";
+
+// Search
+.search_wrapper {
+    position: relative;
+
+    width: auto;
+    height: 45px;
+
+    input[type="text"] {
+        box-sizing: border-box;
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 0px 20px;
+        border-radius: 45px;
+        border: 1px solid #cecece;
+
+        font-size: 1rem;
+    }
+    button[type="submit"] {
+        position: absolute;
+        top: 1px;
+        right: 10px;
+
+        width: 50px;
+        height: 100%;
+
+        border-radius: 45px;
+
+        background: none;
+
+        svg {
+            color: #999999;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+// Form
+
+// Input
+.input[type="text"],
+.input[type="password"],
+.input[type="email"],
+.input[type="tel"],
+.input[type="number"] {
+    display: block;
+    height: 50px;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+
+    margin: 0;
+    padding: 0px 20px;
+
+    font-size: 1rem;
+
+    &:focus {
+        outline: none !important;
+        border: 2px solid $color-primary;
+    }
+}
+.input[type="submit"] {
+    display: block;
+    height: 50px;
+
+    border-radius: 10px;
+    padding: 0px 20px;
+
+    font-weight: bold;
+    color: #fff;
+    background-color: $color-primary;
+}
+.input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    border-radius: 7px;
+    accent-color: $color-primary;
+}
+.input[type="button"] {
+    width: 100%;
+
+    border: 2px solid $color-primary;
+    border-radius: 10px;
+
+    background-color: #fff;
+    color: $color-primary;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// Label
+.label {
+}
+
+// InputContainer
+.input_container {
+    display: flex;
+    gap: 10px;
+
+    width: 100%;
+    height: 50px;
+
+    margin: 10px 0px;
+
+    p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        flex-shrink: 0;
+        flex-basis: 100px;
+
+        font-weight: bold;
+    }
+    input {
+        flex-basis: auto;
+        margin: 0px !important;
+    }
+    button {
+        box-sizing: border-box;
+        width: 180px;
+        height: 50px;
+    }
+}
